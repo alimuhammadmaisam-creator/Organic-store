@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Organic Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'organic-green': '#6B973A',
+                        'organic-light': '#8BC350',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8F6F3] min-h-screen">
+    <!-- Floating Cart Button -->
+    <button class="fixed bottom-6 right-6 w-12 h-12 md:w-14 md:h-14 rounded-full bg-organic-green text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors z-50">
+        <i class="fa-solid fa-cart-shopping text-lg md:text-xl"></i>
+    </button>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 flex items-center justify-between px-4 py-3 shadow-md">
+        <div class="w-32 h-12 bg-[url('./images/organic-store-logo.svg')] bg-contain bg-center bg-no-repeat"></div>
+        <button id="menuBtn" class="p-2">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-white z-40 hidden ">
+        <div class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/index.html" class="text-xl hover:text-organic-green">About</a>
+            <a href="/index1.html" class="text-xl hover:text-organic-green">Everything</a>
+            <a href="/index2.html" class="text-xl hover:text-organic-green">Groceries</a>
+            <a href="/index3.html" class="text-xl hover:text-organic-green">Juice</a>
+            <a href="/index4.html" class="text-xl hover:text-organic-green">Contact</a>
+            <button id="closeMenu" class="absolute top-4 right-4 p-2">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh] bg-cover bg-center bg-no-repeat" style="background-image: url('hello.jpg')">
+        <!-- Header -->
+        <header class="hidden md:flex w-full h-20 justify-between items-center px-4 lg:px-8 bg-transparent absolute top-0 left-0 right-0">
+            <div class="w-36 lg:w-48 h-16 lg:h-20 bg-[url('./images/organic-store-logo.svg')] bg-contain bg-center bg-no-repeat flex-shrink-0"></div>
+            
+            <nav class="flex-1 flex justify-center px-4">
+                <ul class="flex justify-between items-center w-full max-w-xl lg:max-w-2xl list-none">
+                    <li><a href="/index.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base text-black">About</a></li>
+                    <li><a href="/index1.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base text-black">Everything</a></li>
+                    <li><a href="/index2.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base text-black">Groceries</a></li>
+                    <li><a href="/index3.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base text-black">Juice</a></li>
+                    <li><a href="/index4.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base text-black">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="flex items-center gap-2 lg:gap-4">
+                <span class="text-organic-light font-medium text-sm lg:text-base">£0.00</span>
+                <i class="fas fa-shopping-basket text-organic-light text-xl lg:text-2xl"></i>
+            </div>
+        </header>
+
+        <!-- Hero Content -->
+        <div class="flex flex-col justify-center items-center h-full pt-16 md:pt-0">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-medium text-center">About Us</h1>
+        </div>
+        
+        <!-- Decorative Leaf -->
+        <div class="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 w-24 md:w-32 h-24 md:h-32 bg-[url('./images/basil-leaf.png')] bg-contain bg-center bg-no-repeat"></div>
+    </div>
+
+    <!-- About Section -->
+    <section class="w-full flex flex-col md:flex-row mt-8 md:mt-16 lg:mt-24">
+        <div class="w-full md:w-1/2 px-4 md:px-8 py-8 md:py-16">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium text-center md:text-left mb-6 md:mb-8">We Are Your Favourite Store.</h2>
+            <p class="mb-4 text-gray-600 leading-relaxed">
+                Tuas quisquam quo gravida proident harum, aptent ligula anim 
+                consequuntur, ultrices mauris, nunc voluptates lobortis, varius, 
+                potenti placeat! Fuga omnis. Cubilia congue. Recusandae. Vero 
+                penatibus quasi! Nostra tenetur dignissimos ultrices natus distinctio 
+                ultrices consequuntur numqu.
+            </p>
+            <p class="text-gray-600 leading-relaxed">
+                Officiis fuga harum porro et? Similique rhoncus atque! Netus 
+                blanditiis provident nunc posuere. Rem sequi, commodo, lorem 
+                tellus elit, hic sem tenetur anim amet quas, malesuada proident 
+                platea corrupti expedita.
+            </p>
+        </div>
+        <div class="w-full md:w-1/2 min-h-[300px] md:min-h-screen bg-[url('./images/banner-.jpg')] bg-contain bg-center bg-no-repeat"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="w-full py-8 md:py-12 lg:py-16 bg-black flex flex-wrap justify-evenly text-white">
+        <div class="w-full md:w-1/5 mb-8 md:mb-0 text-center md:text-left">
+            <p class="text-lg md:text-xl font-bold">Numbers Speak For <br> Themselves!</p>
+        </div>
+        <div class="w-1/2 md:w-1/5 mb-8 md:mb-0 text-center">
+            <p class="text-3xl md:text-4xl font-medium">5,000+</p>
+            <p class="text-lg md:text-xl">Curated Products</p>
+        </div>
+        <div class="w-1/2 md:w-1/5 mb-8 md:mb-0 text-center">
+            <p class="text-3xl md:text-4xl font-medium">800+</p>
+            <p class="text-lg md:text-xl">Curated Products</p>
+        </div>
+        <div class="w-1/2 md:w-1/5 text-center">
+            <p class="text-3xl md:text-4xl font-medium">40+</p>
+            <p class="text-lg md:text-xl">Product Categories</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="w-full flex flex-col md:flex-row">
+        <!-- Testimonial Side -->
+        <div class="w-full md:w-1/2 flex items-center justify-center py-8 md:py-16 px-4">
+            <div class="w-full max-w-lg bg-[#F8F6F3] p-6 md:p-8 rounded-2xl md:rounded-3xl">
+                <div class="w-full h-64 md:h-80 lg:h-96 bg-[url('./images/farming-free-img-.jpg')] bg-contain bg-center bg-no-repeat rounded-2xl md:rounded-3xl mb-4 md:mb-6 hover:bg-[url('./images/image-01-4.jpg')] transition-all duration-300 bg-white"></div>
+                <div class="flex items-center justify-center gap-1 mb-3 md:mb-4">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="far fa-star text-yellow-400"></i>
+                </div>
+                <p class="text-center text-gray-600 mb-4 md:mb-6 text-sm md:text-base">Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                <div class="flex items-center justify-center gap-3 md:gap-4">
+                    <div class="w-12 md:w-16 h-12 md:h-16 rounded-full bg-[url('./images/client02-free-img.png')] bg-contain bg-center bg-no-repeat"></div>
+                    <span class="font-medium text-sm md:text-base">Mila Kunit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Side -->
+        <div class="w-full md:w-1/2 py-8 md:py-16 px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-around mb-8 md:mb-16">
+                <div class="w-1/3 md:w-1/4 mb-4 md:mb-0 bg-[url('./images/organic-badge-freeimg.png')] bg-contain bg-center bg-no-repeat aspect-square md:aspect-auto md:h-20"></div>
+                <div class="w-full md:w-3/5">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-4">Certified Products</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Click edit button to change this text. Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+            
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium mb-6 md:mb-8">We Deal With Various Quality <br> Organic Products!</h2>
+            
+            <div class="w-20 md:w-1/5 h-8 md:h-10 bg-[url('./images/logo-leaf-new.png')] bg-contain bg-center bg-no-repeat mb-6 md:mb-8"></div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 md:gap-8 mb-6 md:mb-8">
+                <ul class="space-y-2 md:space-y-4">
+                    <li>Dry fruits</li>
+                    <li class="pt-2 md:pt-4">Fresh vegetables</li>
+                    <li class="pt-2 md:pt-4">Dried vegetables</li>
+                </ul>
+                <ul class="space-y-2 md:space-y-4">
+                    <li>Milk products</li>
+                    <li class="pt-2 md:pt-4">Organic honey</li>
+                    <li class="pt-2 md:pt-4">Organic tea</li>
+                </ul>
+            </div>
+            
+            <button class="w-full md:w-2/5 h-10 md:h-12 border-2 border-organic-green bg-organic-green text-white font-medium rounded-lg hover:bg-green-500 hover:border-green-500 transition-colors">
+                START SHOPPING
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-black text-white mt-auto">
+        <div class="w-full py-8 lg:py-16 flex flex-col md:flex-row flex-wrap justify-between px-4 lg:px-8">
+            <!-- Brand -->
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <div class="w-40 h-12 lg:h-16 bg-[url('./images/organic-store-white-logo.png')] bg-contain bg-center bg-no-repeat mb-4 lg:mb-6"></div>
+                <p class="italic font-bold text-gray-400 text-sm lg:text-base">Maecenas mi justo, <br> interdum at consectetur <br> vel, tristique et arcu.</p>
+            </div>
+            
+            <!-- Website Links -->
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Website</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li><a href="/index-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">About</a></li>
+                    <li><a href="/index1-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Everything</a></li>
+                    <li><a href="/index2-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Groceries</a></li>
+                    <li><a href="/index3-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Juice</a></li>
+                    <li><a href="/contact-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Quick Links</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li class="text-gray-400 text-sm lg:text-base">Know More About Us</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Visit Store</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Let's Connect</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Locate Stores</li>
+                </ul>
+            </div>
+            
+            <!-- Site Links -->
+            <div class="w-full md:w-1/2 lg:w-1/5">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Site Links</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Privacy Policy</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Shipping Details</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Offers Coupons</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Terms & Condition</li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="border-gray-600">
+        
+        <p class="px-4 lg:px-8 py-4 lg:py-8 text-gray-400 text-sm lg:text-base text-center md:text-left">Copyright © 2026 | Organic Store</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

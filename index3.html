@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice - Organic Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'organic-green': '#6B973A',
+                        'organic-light': '#8BC350',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8F6F3] min-h-screen">
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden fixed top-0 left-0 right-0 bg-white z-50 flex items-center justify-between px-4 py-3 shadow-md">
+        <div class="w-32 h-12 bg-[url('./images/organic-store-logo.svg')] bg-contain bg-center bg-no-repeat"></div>
+        <button id="menuBtn" class="p-2">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-white z-40 hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/index.html" class="text-xl hover:text-organic-green">About</a>
+            <a href="/index1.html" class="text-xl hover:text-organic-green">Everything</a>
+            <a href="/index2.html" class="text-xl hover:text-organic-green">Groceries</a>
+            <a href="/index3.html" class="text-xl hover:text-organic-green">Juice</a>
+            <a href="/index4.html" class="text-xl hover:text-organic-green">Contact</a>
+            <button id="closeMenu" class="absolute top-4 right-4 p-2">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Header - Desktop -->
+    <header class="hidden md:flex w-full h-20 justify-between items-center px-4 lg:px-8 bg-white shadow-sm">
+        <div class="w-36 lg:w-48 h-16 lg:h-20 bg-[url('./images/organic-store-logo.svg')] bg-contain bg-center bg-no-repeat flex-shrink-0"></div>
+        
+        <nav class="flex-1 flex justify-center px-4">
+            <ul class="flex justify-between items-center w-full max-w-xl lg:max-w-2xl list-none">
+                <li><a href="/index.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base">About</a></li>
+                <li><a href="/index1.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base">Everything</a></li>
+                <li><a href="/index2.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base">Groceries</a></li>
+                <li><a href="/index3.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base">Juice</a></li>
+                <li><a href="/index4.html" class="hover:text-organic-green transition-colors whitespace-nowrap text-sm lg:text-base">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="flex items-center gap-2 lg:gap-4">
+            <span class="text-organic-light font-medium text-sm lg:text-base">£0.00</span>
+            <i class="fas fa-shopping-basket text-organic-light text-xl lg:text-2xl"></i>
+        </div>
+    </header>
+
+    <div class="md:hidden h-16"></div>
+
+    <!-- Main Content with Proper Alignment -->
+    <div class="w-full flex flex-col lg:flex-row">
+        
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-64 xl:w-72 p-4 lg:p-6 lg:min-h-screen lg:sticky lg:top-0 bg-white lg:bg-[#F8F6F3] order-2 lg:order-1">
+            <!-- Search - Mobile -->
+            <div class="lg:hidden w-full mb-6">
+                <div class="flex items-center gap-2">
+                    <input type="text" class="flex-1 h-10 border-2 border-gray-300 bg-white px-3 rounded-lg" placeholder="Search products...">
+                    <button class="w-10 h-10 bg-organic-green text-white flex items-center justify-center rounded-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search - Desktop -->
+            <div class="hidden lg:block w-full mb-6">
+                <div class="flex items-center gap-2">
+                    <input type="text" class="flex-1 h-10 border-2 border-gray-300 bg-white px-3 rounded-lg" placeholder="Search products">
+                    <button class="w-12 h-10 bg-organic-green text-white flex items-center justify-center rounded-lg hover:bg-green-600">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Filter by Price -->
+            <div class="w-full mb-6 lg:mb-8">
+                <h2 class="text-lg lg:text-2xl font-bold mb-3 lg:mb-4">Filter by price</h2>
+                <div class="flex gap-2 lg:gap-4 text-gray-600">
+                    <div class="w-1/2">
+                        <div class="w-full h-10 lg:h-12 border border-black text-center flex items-center justify-center text-sm">£15</div>
+                        <p class="text-black text-sm mt-1 lg:mt-2">Min. Price</p>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="w-full h-10 lg:h-12 border border-black text-center flex items-center justify-center text-sm">£35</div>
+                        <p class="text-black text-sm mt-1 lg:mt-2">Max. Price</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categories -->
+            <div class="w-full mb-6 lg:mb-8">
+                <ul class="space-y-2 lg:space-y-3">
+                    <li><a href="#" class="text-organic-green hover:text-green-700">Groceries</a><span class="ml-2 text-gray-500">(10)</span></li>
+                    <li><a href="#" class="text-organic-green hover:text-green-700">Juices</a><span class="ml-2 text-gray-500">(9)</span></li>
+                </ul>
+            </div>
+            
+            <!-- Sidebar Products -->
+            <div class="hidden lg:block w-full space-y-4 lg:space-y-6">
+                <div class="w-full">
+                    <div class="w-full h-32 lg:h-40 bg-[url('./images/edible-oil-.jpg')] bg-contain bg-center bg-no-repeat relative">
+                        <div class="absolute top-1 lg:top-2 right-1 lg:right-2 w-10 lg:w-12 h-5 lg:h-6 border border-black rounded-full flex items-center justify-center bg-white">
+                            <span class="text-xs">Sale!</span>
+                        </div>
+                    </div>
+                    <h3 class="text-organic-green text-sm lg:text-base mt-2 lg:mt-4">Natural Extracted Edible Oil.</h3>
+                    <p class="text-sm">£25.00</p>
+                </div>
+                
+                <div class="w-full">
+                    <div class="w-full h-32 lg:h-40 bg-[url('./images/coffee-asorted-.jpg')] bg-contain bg-center bg-no-repeat relative">
+                        <div class="absolute top-1 lg:top-2 right-1 lg:right-2 w-10 lg:w-12 h-5 lg:h-6 border border-black rounded-full flex items-center justify-center bg-white">
+                            <span class="text-xs">Sale!</span>
+                        </div>
+                    </div>
+                    <h3 class="text-organic-green text-sm lg:text-base mt-2 lg:mt-4">Assorted Coffee</h3>
+                    <p class="text-sm">£35.00</p>
+                </div>
+                
+                <div class="w-full">
+                    <div class="w-full h-32 lg:h-40 bg-[url('./images/sanitizer-.jpg')] bg-contain bg-center bg-no-repeat relative">
+                        <div class="absolute top-1 lg:top-2 right-1 lg:right-2 w-10 lg:w-12 h-5 lg:h-6 border border-black rounded-full flex items-center justify-center bg-white">
+                            <span class="text-xs">Sale!</span>
+                        </div>
+                    </div>
+                    <h3 class="text-organic-green text-sm lg:text-base mt-2 lg:mt-4">Hand Sanitizer</h3>
+                    <p class="text-sm">£15.00</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid - Properly Aligned -->
+        <main class="flex-1 p-4 lg:p-6 order-1 lg:order-2">
+            <div class="max-w-5xl mx-auto">
+                <!-- Page Header -->
+                <div class="w-full mb-4 lg:mb-8">
+                    <p class="text-sm text-gray-500 mb-1 lg:mb-2">
+                        <a href="/" class="hover:text-organic-green">Home</a> / Juice
+                    </p>
+                    <h1 class="text-organic-light text-3xl lg:text-4xl xl:text-5xl font-bold">Juice</h1>
+                    <p class="mt-4 text-gray-600 text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim, velit et luctus interdum, est quam scelerisque tellus.</p>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0 mb-4 lg:mb-8">
+                    <p class="text-sm">Showing 1–9 of 12 results</p>
+                    <p class="text-sm">Default sorting ▾</p>
+                </div>
+
+                <!-- Products Grid - Row 1 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 mb-4 lg:mb-8">
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/coffee-asorted-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Assorted Coffee</p>
+                        <p class="font-bold text-sm lg:text-base">£35.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/cashew-butter-.jpg')] bg-contain bg-center bg-no-repeat mx-auto relative">
+                            <div class="absolute top-1 right-1 w-12 lg:w-16 h-5 lg:h-6 rounded-full bg-organic-light flex items-center justify-center">
+                                <span class="text-xs text-white">Sale!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Cashew-Butter</p>
+                        <p class="font-bold text-sm lg:text-base">£25.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/diabetic-cookies-.jpg')] bg-contain bg-center bg-no-repeat mx-auto relative">
+                            <div class="absolute top-1 right-1 w-12 lg:w-16 h-5 lg:h-6 rounded-full bg-organic-light flex items-center justify-center">
+                                <span class="text-xs text-white">Sale!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Diabetic Cookies</p>
+                        <p class="font-bold text-sm lg:text-base">£25.00</p>
+                    </div>
+                </div>
+
+                <!-- Products Grid - Row 2 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 mb-4 lg:mb-8">
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/eggs-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Juice</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Farm Fresh Egg</p>
+                        <p class="font-bold text-sm lg:text-base">£34.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/orage-juice-kariz-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Juice</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Fresh Orange Juice</p>
+                        <p class="font-bold text-sm lg:text-base">£18.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/organic-honey-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Juice</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Fresh Organic Honey</p>
+                        <p class="font-bold text-sm lg:text-base">£34.00</p>
+                    </div>
+                </div>
+
+                <!-- Products Grid - Row 3 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6 mb-4 lg:mb-8">
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/edible-oil-.jpg')] bg-contain bg-center bg-no-repeat mx-auto relative">
+                            <div class="absolute top-1 right-1 w-12 lg:w-16 h-5 lg:h-6 rounded-full bg-organic-light flex items-center justify-center">
+                                <span class="text-xs text-white">Sale!</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Natural Extarcted Edible Oil</p>
+                        <p class="font-bold text-sm lg:text-base">£25.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/pulses-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Pulses From Organic Farm</p>
+                        <p class="font-bold text-sm lg:text-base">£15.00</p>
+                    </div>
+                    
+                    <div class="text-center bg-white p-3 lg:p-4 rounded-lg shadow-sm">
+                        <div class="w-full h-32 lg:h-40 bg-[url('./images/wheat-.jpg')] bg-contain bg-center bg-no-repeat mx-auto"></div>
+                        <p class="text-gray-500 text-sm mt-3 lg:mt-4">Groceries</p>
+                        <p class="font-bold text-sm lg:text-base mt-1">Wheat From Organic Farm</p>
+                        <p class="font-bold text-sm lg:text-base">£34.00</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex items-center justify-center gap-2 lg:gap-4">
+                    <div class="w-10 lg:w-12 h-10 border border-organic-light text-organic-light hover:bg-organic-light hover:text-white flex items-center justify-center cursor-pointer transition-colors">
+                        <span class="font-bold text-sm">1</span>
+                    </div>
+                    <div class="w-10 lg:w-12 h-10 border border-organic-light text-organic-light hover:bg-organic-light hover:text-white flex items-center justify-center cursor-pointer transition-colors">
+                        <span class="font-bold text-sm">2</span>
+                    </div>
+                    <div class="w-10 lg:w-12 h-10 border border-organic-light text-organic-light hover:bg-organic-light hover:text-white flex items-center justify-center cursor-pointer transition-colors">
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full bg-black text-white mt-auto">
+        <div class="w-full py-8 lg:py-16 flex flex-col md:flex-row flex-wrap justify-between px-4 lg:px-8">
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <div class="w-40 h-12 lg:h-16 bg-[url('./images/organic-store-white-logo.png')] bg-contain bg-center bg-no-repeat mb-4 lg:mb-6"></div>
+                <p class="italic font-bold text-gray-400 text-sm lg:text-base">Maecenas mi justo, <br> interdum at consectetur <br> vel, tristique et arcu.</p>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Website</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li><a href="/index-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">About</a></li>
+                    <li><a href="/index1-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Everything</a></li>
+                    <li><a href="/index2-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Groceries</a></li>
+                    <li><a href="/index3-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Juice</a></li>
+                    <li><a href="/contact-fixed.html" class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/5 mb-6 md:mb-0">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Quick Links</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li class="text-gray-400 text-sm lg:text-base">Know More About Us</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Visit Store</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Let's Connect</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Locate Stores</li>
+                </ul>
+            </div>
+            
+            <div class="w-full md:w-1/2 lg:w-1/5">
+                <h4 class="text-lg lg:text-2xl font-medium mb-3 lg:mb-6">Site Links</h4>
+                <ul class="space-y-1 lg:space-y-2">
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Privacy Policy</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Shipping Details</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Offers Coupons</li>
+                    <li class="text-gray-400 hover:text-white transition-colors text-sm lg:text-base cursor-pointer">Terms & Condition</li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="border-gray-600">
+        
+        <p class="px-4 lg:px-8 py-4 lg:py-8 text-gray-400 text-sm lg:text-base text-center md:text-left">Copyright © 2026 | Organic Store</p>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
